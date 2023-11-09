@@ -7,7 +7,7 @@ async function saveMoviesToElasticsearch(index) {
   // 爬取電影 API 資料
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${index}?api_key=8abf3597b0f539c2c56778a95933a06a&language=eng-US`
+      `https://api.themoviedb.org/3/movie/${index}?api_key=＄{API_KEY}`
     );
     const results = response.data;
 
