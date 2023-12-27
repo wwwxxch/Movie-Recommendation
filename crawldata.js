@@ -23,7 +23,7 @@ async function saveMoviesToElasticsearch(index) {
 			popularity: results.popularity,
 			genres: results.genres,
 		};
-		console.log(moviedata);
+		// console.log(moviedata);
 		const addIntoResponse = await client.index({
 			index: indexName,
 			body: moviedata,
@@ -34,7 +34,8 @@ async function saveMoviesToElasticsearch(index) {
 			console.log("存入 Elasticsearch 發生錯誤：", addIntoResponse.errors);
 		}
 	} catch (e) {
-		console.log("not found!");
+		// if axios res status code != 200
+		console.log(`index = ${index} not found!`);
 	}
 }
 

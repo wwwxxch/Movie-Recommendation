@@ -13,6 +13,8 @@ services:
     networks:
       - elastic
     volumes:
-      - ./data:/data:/usr/share/elasticsearch/data
+      - elastic_data:/usr/share/elasticsearch/data
 networks:
   elastic:
+volumes:
+  elastic_data:
